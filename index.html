@@ -1,0 +1,259 @@
+
+
+<!doctype html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+      <title>QCA3642 - Effects and Shaders</title>
+      <link rel="stylesheet" href="css/reset.css">
+      <link rel="stylesheet" href="css/reveal.css">
+      <link rel="stylesheet" href="css/theme/black-new.css">
+      <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+      <!-- Theme used for syntax highlighting of code -->
+      <!-- 	<link rel="stylesheet" href="lib/css/zenburn.css">-->
+      <!-- Printing and PDF exports -->
+      <script>
+         var link = document.createElement('link');
+         link.rel = 'stylesheet';
+         link.type = 'text/css';
+         link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+         document.getElementsByTagName('head')[0].appendChild(link);
+      </script>
+      <script type="text/javascript">
+         window.addEventListener("load", function() {
+             revealDiv = document.querySelector("body div.reveal")
+             footer = document.getElementById("perma-footer");
+             revealDiv.appendChild(footer);
+         });
+      </script>
+   </head>
+   <body>
+      <div class="reveal">
+         <div class="slides">
+            <!-- Footer appears on every slide -->
+            <div id="perma-footer" class="footer">
+               <span class="element">QCA3642 2019 - WebVR Frameworks - Damian Hills</span>
+               <span class="element"></span>
+               <span class="element">
+               <a id="seturl" href="" target="_blank">begin</a>
+               </span>
+            </div>
+            <!--------------------------------------------------------------------->
+            <section data-background-iframe="https://paveldogreat.github.io/WebGL-Fluid-Simulation" data-background-interactive>
+               <h1>QCA3642 - Introduction to Shaders</h1>
+               <h3></h3>
+               <p>Dr. Damian Hills </p>
+            </section>
+            <section data-background-iframe="https://threejs.org/examples/webgl_shaders_ocean.html" data-background-interactive>
+               <h3 style=" ">
+                  What is a Shader?
+               </h3>
+            </section>
+            <!--shader intro eg-->
+            <section data-background-iframe=" https://codepen.io/shubniggurath/pen/vpNxWN" data-background-interactive>
+            </section>
+            <section data-background-iframe="https://threejs.org/examples/webgl_shader2.html" data-background-interactive>
+            </section>
+            <section data-background-iframe="http://three-bas-examples.surge.sh/examples/points_animation/" data-background-interactive>
+            </section>
+            <!--unused -->
+            <section data-background-iframe="https://threejs.org/examples/webgl_lightningstrike.html" data-background-interactive>
+            </section>
+            <section data-background-iframe="https://threejs.org/examples/webgl_fire.html" data-background-interactive>
+            </section>
+            <section data-background-iframe="https://tympanus.net/Tutorials/InteractiveParticles/" data-background-interactive>
+            </section>
+
+
+            <section >
+               <a href="https://github.com/omgitsraven/aframe-raytrace-component" target="_blank">a-frame raytrace</a>
+               <p style="text-align: left;" >
+               </p>
+            
+            </section>
+
+            <!--shader intro -->
+            <section data-background-iframe="https://threejs.org/examples/webgl_gpgpu_birds.html" data-background-interactive>
+               <h3 >
+                  What is a Shader?
+               </h3>
+               <p style="text-align: left; color: #000000;">
+                  A shader is a program that runs on the GPU (the graphic card) of our computer and it’s mostly used to modify the appearance of 3D objects, create light effects for virtual scenes and process images. Shaders perform those task in a very fast and efficient way.
+               </p>
+            </section>
+            <section data-background-iframe="https://threejs.org/examples/webgl_postprocessing_godrays.html" data-background-interactive>
+               <h3 >
+               </h3>
+               <p style="text-align: left; color: #000000;">
+                  A single shader is actually composed by two programs: a vertex shader and a fragment shader.
+               </p>
+            </section>
+            <section data-background-iframe="https://threejs.org/examples/webgl_gpgpu_protoplanet.html" data-background-interactive>
+               <h3 >
+               </h3>
+               <p style="text-align: left; ">
+                  On every frame the GPU runs a tiny program called a vertex shader on every single vertex in the geometry. This tiny program calculates the final position of vertexes on the screen then sends them on to a second tiny program called a fragment shader.
+               </p>
+            </section>
+            <section data-background-iframe="https://threejs.org/examples/webgl_marchingcubes.html" data-background-interactive>
+               <h3 >
+               </h3>
+               <p style="text-align: left; ">
+                  The fragment shader is run on every single fragment (pixel) of the final picture on screen. This tiny program calculates the final color of each pixel based on textures, lighting, and other settings.
+               </p>
+            </section>
+            <section data-background-iframe="https://threejs.org/examples/webgl_lights_hemisphere.html" data-background-interactive>
+               <h3 >
+               </h3>
+               <p style="text-align: left; color: #000000;">
+                  Uniforms are sent to both vertex shaders and fragment shaders and contain values that stay the same across the entire frame being rendered. A good example of this might be a light’s position.
+               </p>
+            </section>
+            <section data-background-iframe="https://threejs.org/examples/webgl_buffergeometry_custom_attributes_particles.html" data-background-interactive>
+               <h3 >
+               </h3>
+               <p style="text-align: left; ">
+                  Attributes are values that are applied to individual vertices. Attributes are only available to the vertex shader. This could be something like each vertex having a distinct colour. Attributes have a one-to-one relationship with vertices.
+               </p>
+            </section>
+            <!--basic -->
+            <section >
+               <a href="https://thebookofshaders.com" target="_blank">Book of Shaders</a>
+               <p style="" >.....interesting site on shaders</p>
+            </section>
+            <section >
+               <a href="https://thebookofshaders.com/02/" target="_blank">Book of Shaders - Intro</a>
+               <p style="" >.....intro section</p>
+            </section>
+            <section>
+               <div align="left" class="w3-panel w3-pale-green">
+                  <p>
+                     /**
+                     * Multiply each vertex by the  model-view matrix and the<br>
+                     * projection matrix to get a final vertex position<br>
+                  </p>
+                  <p align="left"><br><br>
+                     void main() { <br>
+                     &nbsp;&nbsp;&nbsp;&nbsp;gl_Position = projectionMatrix * modelViewMatrix *  vec4(position,1.0);<br>
+                     }<br><br>
+                  </p>
+               </div>
+            </section>
+            <section>
+               <div class="w3-panel w3-pale-green">
+                  <p>
+                     /**
+                     *  Set the colour to a lovely pink. <br>
+                     *  Note that the color is a 4D Float  Vector, R,G,B and A and each part runs from 0.0 to 1.0<br>
+                  </p>
+                  <p align="left"><br><br>
+                     void main() { <br>
+                     &nbsp;&nbsp;&nbsp;&nbsp;       &nbsp;&nbsp;&nbsp;&nbsp;      &nbsp;&nbsp;&nbsp;&nbsp;                    &nbsp;&nbsp;&nbsp;&nbsp;     &nbsp;&nbsp;&nbsp;&nbsp; gl_FragColor = vec4(1.0,  // R<br>
+                     &nbsp;&nbsp;&nbsp;&nbsp;       &nbsp;&nbsp;&nbsp;&nbsp;      &nbsp;&nbsp;&nbsp;&nbsp;    &nbsp;&nbsp;&nbsp;&nbsp;       &nbsp;&nbsp;&nbsp;&nbsp;      &nbsp;&nbsp;&nbsp;&nbsp;              &nbsp;&nbsp;&nbsp;&nbsp;       &nbsp;&nbsp;&nbsp;&nbsp;      &nbsp;&nbsp;&nbsp;&nbsp;    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0.0,  // G <br>
+                     &nbsp;&nbsp;&nbsp;&nbsp;       &nbsp;&nbsp;&nbsp;&nbsp;      &nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;       &nbsp;&nbsp;&nbsp;&nbsp;      &nbsp;&nbsp;&nbsp;&nbsp;              &nbsp;&nbsp;&nbsp;&nbsp;       &nbsp;&nbsp;&nbsp;&nbsp;      &nbsp;&nbsp;&nbsp;&nbsp;      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0.0,  // B <br>
+                     &nbsp;&nbsp;&nbsp;&nbsp;       &nbsp;&nbsp;&nbsp;&nbsp;      &nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;       &nbsp;&nbsp;&nbsp;&nbsp;      &nbsp;&nbsp;&nbsp;&nbsp;              &nbsp;&nbsp;&nbsp;&nbsp;       &nbsp;&nbsp;&nbsp;&nbsp;      &nbsp;&nbsp;&nbsp;&nbsp;      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  1.0); // A <br>
+                     &nbsp;&nbsp;&nbsp;&nbsp;       &nbsp;&nbsp;&nbsp;&nbsp;      &nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;       &nbsp;&nbsp;&nbsp;&nbsp;      &nbsp;&nbsp;&nbsp;&nbsp;              &nbsp;&nbsp;&nbsp;&nbsp;       &nbsp;&nbsp;&nbsp;&nbsp;      &nbsp;&nbsp;&nbsp;&nbsp;      &nbsp;&nbsp;&nbsp;&nbsp;  }<br>
+                     }<br><br>
+                  </p>
+               </div>
+            </section>
+            <!--Directional Light and Sphere Normals -->
+            <section >
+               <a href="" target="_blank">Directional Light and Sphere Normals</a>
+               <p style="text-align: left;" >
+               </p>
+               <img src = "asset/lightdirection.png"></img>
+            </section>
+            <section >
+               <a href="" target="_blank">Directional Light and Sphere Normals</a>
+               <p style="text-align: left;" >
+                  The surface's facing direction at any point is called its surface normal. The surface normal is a vector that points in the direction the surface is facing.
+               </p>
+               <img src = "asset/sphere_normals.jpg"></img>
+            </section>
+            <section >
+               <a href="https://aerotwist.com/static/tutorials/an-introduction-to-shaders-part-2/demo/demo-2.html" target="_blank">Directional Light Shader</a>
+               <p style="text-align: left;" > We’ll update our Vertex Shader to provide each vertex normal to the Fragment Shader. We do this with a varying </p>
+               <img src = "asset/light0.png"></img>
+            </section>
+            <section >
+               <a href="https://aerotwist.com/static/tutorials/an-introduction-to-shaders-part-2/demo/demo-2.html" target="_blank">Directional Light Shader</a>
+               <p style="text-align: left;" >In the Fragment Shader we’re going to use the dot product of the vertex normal with a vector that represents a light shining from above and to the right of the sphere. The net result of this gives us an effect similar to a directional light in a 3D package. </p>
+               <img src = "asset/light1.png"></img>
+            </section>
+            <section >
+               <a href="https://aerotwist.com/static/tutorials/an-introduction-to-shaders-part-2/demo/demo-2.html" target="_blank">Directional Light Shader</a>
+               <p style="text-align: left;" >
+                  With normalised vectors, if they point in exactly the same direction, you get a value of 1. If they point in opposite directions you get a -1. What we do is take that number and apply it to our lighting. So a vertex in the top right will have a value near or equal to 1,
+               </p>
+               <img src = "asset/lambert1.gif"></img>
+            </section>
+            <!--shader resources -->
+            <section >
+               <a href="https://www.shadertoy.com/" target="_blank">ShaderToy</a>
+               <p style="" ></p>
+            </section>
+            <section >
+               <a href="http://glslsandbox.com/e#57476.0" target="_blank">GLSL sandbox</a>
+               <p style="" ></p>
+            </section>
+            <section >
+               <a href="https://thebookofshaders.com/10/" target="_blank">Book of Shaders - Generative</a>
+               <p style="" >.....generative section</p>
+            </section>
+            <!--workshops -->
+            <section data-background-iframe="https://shaderfrog.com/" data-background-interactive>
+            </section>
+            <section data-background-iframe="http://three-bas-examples.surge.sh/examples/instanced_prefabs/" data-background-interactive>
+               <h3 style=" ">
+                  What we will do in the workshops
+               </h3>
+               <p style=" " ><span>&#8226;</span>Play with ShaderFrog</p>
+               <p style=" " ><span>&#8226;</span> Learn to import into a-frame </p>
+            </section>
+            <!-- glitch workshop-->
+            <section data-background-iframe="https://glitch.com/edit/#!/damskii-aframe-shaderfrog" data-background-interactive>
+            </section>
+            <section >
+               <a href="https://www.youtube.com/watch?v=CEC5NGbf_d4" target="_blank">ShaderFrog</a>
+               <p style="" >.....video</p>
+            </section>
+         </div>
+      </div>
+      <script src="js/reveal.js"></script>
+      <script>
+         // More info about config & dependencies:
+         // - https://github.com/hakimel/reveal.js#configuration
+         // - https://github.com/hakimel/reveal.js#dependencies
+         Reveal.initialize({
+             dependencies: [{
+                 src: 'plugin/markdown/marked.js'
+             }, {
+                 src: 'plugin/markdown/markdown.js'
+             }, {
+                 src: 'plugin/notes/notes.js',
+                 async: true
+             }, {
+                 src: 'plugin/highlight/highlight.js',
+                 async: true
+             }]
+         });
+
+         Reveal.addEventListener('slidechanged', function(event) {
+             // event.previousSlide, event.currentSlide, event.indexh, event.indexv
+
+             var currentSlide = event.currentSlide;
+             var iframeValue = currentSlide.getAttribute("data-background-iframe");
+             var setURL = document.getElementById("seturl");
+             var href = setURL.getAttribute("href");
+
+             setURL.textContent = iframeValue;
+             setURL.setAttribute("href", iframeValue);
+
+
+
+         });
+      </script>
+   </body>
+</html>
